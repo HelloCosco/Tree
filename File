@@ -1,0 +1,30 @@
+#File
+
+//File that I'm goint to use to incorporate into the program
+
+import java.io.*;
+
+
+public class File 
+{
+    BufferedReader in;
+    String read;
+ 
+    public File(){
+        try {
+            //open a bufferedReader to file test.txt
+            in = new BufferedReader(new FileReader("test.txt"));
+            //read a line from test.txt and save into a string
+            read = in.readLine();
+            //print out the line
+            System.out.println("file output: " + read);
+            //safely close the BufferedReader after use
+            in.close();
+        }catch(IOException e){
+            System.out.println("There was a problem:" + e);
+        }
+    }
+    public static void main(String[] args){
+        File File = new File();
+    }
+}
